@@ -1,0 +1,27 @@
+# Git 초기화
+git init
+
+# .gitignore 생성
+echo "node_modules/" > .gitignore
+echo "dist/" >> .gitignore
+echo "build/" >> .gitignore
+echo ".env" >> .gitignore
+echo ".DS_Store" >> .gitignore
+
+# README 생성
+echo "# 프로젝트명" > README.md
+
+# 원격 저장소 연결 (GitHub 저장소 URL로 변경)
+git remote add origin https://github.com/유저명/저장소명.git
+
+# 파일 추가 및 커밋
+git add .
+git commit -m "Initial commit"
+
+# 메인 브랜치로 푸시
+git branch -M main
+git push -u origin main
+
+# 개발 브랜치 생성
+git checkout -b develop
+git push -u origin develop
