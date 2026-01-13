@@ -1,0 +1,70 @@
+https://vibemoney.biz/
+
+# Git 초기화
+git init
+
+# .gitignore 생성
+echo "node_modules/" > .gitignore
+echo "dist/" >> .gitignore
+echo "build/" >> .gitignore
+echo ".env" >> .gitignore
+echo ".DS_Store" >> .gitignore
+
+# README 생성
+echo "# 프로젝트명" > README.md
+
+# 원격 저장소 연결 (GitHub 저장소 URL로 변경)
+git remote add origin https://github.com/유저명/저장소명.git
+
+# 파일 추가 및 커밋
+git add .
+git commit -m "Initial commit"
+
+# 메인 브랜치로 푸시
+git branch -M main
+git push -u origin main
+
+# 개발 브랜치 생성
+git checkout -b develop
+git push -u origin develop
+
+
+개인적으로 바이브 코딩 시에는 Netlify를 사용합니다. 개인 사용자는 완전 무료이며, 심지어 DB(Neon) 연결도 무료입니다.
+
+01
+Netlify 가입 및 GitHub 연결
+Netlify에 가입 후, 내 GitHub 계정을 연결하고 해당 레포지토리를 선택하면 자동으로 배포가 시작됩니다.
+
+02
+자동 배포
+이후 코드를 GitHub에 push할 때마다 Netlify가 자동으로 빌드하고 배포합니다.
+
+💡 클라이언트 배포 팁
+외주 작업 시, 클라이언트 계정으로 Netlify를 가입하게 한 뒤, 해당 계정에 GitHub를 연결해두면 나중에 코드를 업데이트할 때마다 자동으로 클라이언트 사이트도 업데이트됩니다. 유지보수가 매우 편해집니다.
+
+🗄️ 데이터베이스가 필요하다면? (Neon DB)
+DB가 필요한 프로젝트라면 Neon을 사용하세요. Netlify와 가장 궁합이 좋은 Serverless Postgres DB입니다.
+
+🔗 Netlify와 Neon 연동하는 법
+Netlify Dashboard 접속 > 내 사이트 선택
+상단 메뉴에서 Connect (또는 Integrations) 탭 클릭
+Neon 검색 후 'Enable' 또는 'Connect' 클릭
+Neon 계정 로그인 > 프로젝트 생성하면 DATABASE_URL 환경변수가 자동으로 주입됩니다!
+
+
+01
+Netlify 설정
+Netlify 대시보드 > Domain management > Add a domain으로 이동합니다.
+구매한 도메인 주소(예: my-service.com)를 입력하고 Verify를 클릭합니다.
+"Add domain"을 누르면 Netlify가 4개의 네임서버 주소(dns1.p0x.nsone.net 등)를 알려줍니다. 이 창을 켜두세요.
+
+02
+Namecheap 설정
+Namecheap 로그인 > Domain List > 해당 도메인의 Manage 버튼 클릭.
+Nameservers 항목을 "Namecheap BasicDNS"에서 "Custom DNS"로 변경합니다.
+Netlify에서 받은 4개의 주소를 차례대로 입력하고 체크(저장) 버튼을 누릅니다.
+
+03
+HTTPS (보안) 자동 적용
+네임서버 변경 후 최대 24시간이 걸릴 수 있지만, 보통 10분~1시간 내에 완료됩니다.
+연결이 완료되면 Netlify가 자동으로 SSL 인증서(HTTPS)를 발급해줍니다. 이제 당신의 사이트는 전 세계 어디서든 안전하게 접속 가능합니다.
