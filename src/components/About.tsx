@@ -112,8 +112,8 @@ export default function About() {
                         Our Philosophy
                     </span>
                     <h2 style={{ marginTop: "1rem", marginBottom: "1.5rem" }}>
-                        <span className="chaos-text" style={{ display: "inline-block" }}>AI 시대,</span>{" "}
-                        <span className="text-gradient-accent chaos-text" style={{ display: "inline-block" }}>유일한 나침반</span>
+                        <span style={{ display: "inline-block" }}>AI 시대,</span>{" "}
+                        <span style={{ display: "inline-block", color: "#FFFFFF", fontWeight: 700 }}>유일한 나침반</span>
                     </h2>
                     <p style={{ maxWidth: "700px", margin: "0 auto", lineHeight: 1.9 }}>
                         AI라는 거대한 조류 속에서 표류하는 리더를 위한 유일한 나침반.
@@ -125,6 +125,13 @@ export default function About() {
                         <br />
                         정체된 고민을 <strong style={{ color: "var(--color-accent)" }}>거침없는 실행</strong>으로 설계해 드립니다.
                     </p>
+                </div>
+
+                {/* Section Title */}
+                <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+                    <h3 style={{ fontSize: "1.5rem", fontWeight: 600, color: "var(--color-text)" }}>
+                        SinglePick을 써야하는 이유
+                    </h3>
                 </div>
 
                 {/* Bridge Visualization */}

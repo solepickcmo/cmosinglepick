@@ -131,9 +131,9 @@ export default function Hero() {
                 >
                     마케팅은 어려운 숙제가 아닙니다.
                     <br />
-                    <span className="text-gradient-primary">상품과 고객이 만나는</span>
+                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>상품과 고객이 만나는</span>
                     <br />
-                    <span className="text-gradient-accent">&apos;길&apos;</span>을 터주는 일입니다.
+                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>&apos;길&apos;</span>을 터주는 일입니다.
                 </h1>
 
                 {/* Subtitle */}
@@ -188,7 +188,7 @@ export default function Hero() {
                     }}
                 >
                     {[
-                        { value: "40억+", label: "2년 누적 매출" },
+                        { value: "50억+", label: "2년 누적 매출" },
                         { value: "10년", label: "유통 경력" },
                         { value: "500+", label: "컨설팅 케이스" },
                     ].map((stat) => (
@@ -204,9 +204,7 @@ export default function Hero() {
                                 style={{
                                     fontSize: "2.5rem",
                                     fontWeight: 800,
-                                    background: "linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
+                                    color: "#FFFFFF",
                                     marginBottom: "0.5rem",
                                 }}
                             >

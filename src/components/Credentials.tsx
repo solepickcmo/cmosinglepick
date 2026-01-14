@@ -122,7 +122,7 @@ export default function Credentials() {
                         Verified Results
                     </span>
                     <h2 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-                        <span className="text-gradient-accent">실적</span>으로 증명합니다
+                        <span style={{ color: "#FFFFFF", fontWeight: 700 }}>실적</span>으로 증명합니다
                     </h2>
                     <p style={{ color: "var(--color-text-secondary)", maxWidth: "600px", margin: "0 auto" }}>
                         국세청 부가가치세 신고 자료 기반 실제 매출 데이터입니다.
@@ -135,12 +135,12 @@ export default function Credentials() {
                         textAlign: "center",
                         marginBottom: "3rem",
                         padding: "2rem",
-                        background: "linear-gradient(135deg, rgba(255, 184, 0, 0.1), rgba(0, 212, 255, 0.05))",
+                        background: "#FFFFFF",
                         borderRadius: "20px",
-                        border: "1px solid rgba(255, 184, 0, 0.3)",
+                        border: "1px solid rgba(255, 255, 255, 0.3)",
                     }}
                 >
-                    <p style={{ color: "var(--color-text-secondary)", marginBottom: "0.5rem", fontSize: "0.9rem" }}>
+                    <p style={{ color: "#333333", marginBottom: "0.5rem", fontSize: "0.9rem" }}>
                         12개월 누적 과세표준 (매출)
                     </p>
                     <div
@@ -148,14 +148,12 @@ export default function Credentials() {
                         style={{
                             fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
                             fontWeight: 800,
-                            background: "linear-gradient(135deg, var(--color-accent), var(--color-primary))",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
+                            color: "#0A0A0F",
                         }}
                     >
                         {formattedTotal}
                     </div>
-                    <p style={{ color: "var(--color-text-muted)", marginTop: "0.5rem", fontSize: "0.8rem" }}>
+                    <p style={{ color: "#666666", marginTop: "0.5rem", fontSize: "0.8rem" }}>
                         2024년 4분기 ~ 2025년 3분기
                     </p>
                 </div>

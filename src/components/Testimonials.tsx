@@ -112,35 +112,33 @@ export default function Testimonials() {
     useEffect(() => {
         if (!track1Ref.current || !track2Ref.current) return;
 
-        // Clone items for seamless loop
         const track1 = track1Ref.current;
         const track2 = track2Ref.current;
 
-        // First row - scroll left
-        const tl1 = gsap.to(track1, {
-            xPercent: -50,
-            duration: 60,
-            ease: "none",
-            repeat: -1,
-        });
-
-        // Second row - scroll right
-        const tl2 = gsap.to(track2, {
-            xPercent: 50,
-            duration: 60,
-            ease: "none",
-            repeat: -1,
-        });
-
         // Pause on hover
-        track1.addEventListener("mouseenter", () => tl1.pause());
-        track1.addEventListener("mouseleave", () => tl1.play());
-        track2.addEventListener("mouseenter", () => tl2.pause());
-        track2.addEventListener("mouseleave", () => tl2.play());
+        const handleMouseEnter1 = () => {
+            track1.style.animationPlayState = "paused";
+        };
+        const handleMouseLeave1 = () => {
+            track1.style.animationPlayState = "running";
+        };
+        const handleMouseEnter2 = () => {
+            track2.style.animationPlayState = "paused";
+        };
+        const handleMouseLeave2 = () => {
+            track2.style.animationPlayState = "running";
+        };
+
+        track1.addEventListener("mouseenter", handleMouseEnter1);
+        track1.addEventListener("mouseleave", handleMouseLeave1);
+        track2.addEventListener("mouseenter", handleMouseEnter2);
+        track2.addEventListener("mouseleave", handleMouseLeave2);
 
         return () => {
-            tl1.kill();
-            tl2.kill();
+            track1.removeEventListener("mouseenter", handleMouseEnter1);
+            track1.removeEventListener("mouseleave", handleMouseLeave1);
+            track2.removeEventListener("mouseenter", handleMouseEnter2);
+            track2.removeEventListener("mouseleave", handleMouseLeave2);
         };
     }, []);
 
@@ -167,10 +165,10 @@ export default function Testimonials() {
                         textTransform: "uppercase",
                     }}
                 >
-                    Testimonials
+                    대표님들의 솔직한 리뷰
                 </span>
                 <h2 style={{ marginTop: "1rem" }}>
-                    <span className="text-gradient-primary">실제 대표님들</span>의 후기
+                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>실제 대표님들</span>의 후기
                 </h2>
             </div>
 
@@ -178,6 +176,7 @@ export default function Testimonials() {
             <div style={{ marginBottom: "1.5rem", position: "relative" }}>
                 <div
                     ref={track1Ref}
+                    className="scroll-track-left"
                     style={{
                         display: "flex",
                         gap: "1.5rem",
@@ -237,11 +236,11 @@ export default function Testimonials() {
             <div style={{ position: "relative" }}>
                 <div
                     ref={track2Ref}
+                    className="scroll-track-right"
                     style={{
                         display: "flex",
                         gap: "1.5rem",
                         width: "fit-content",
-                        transform: "translateX(-50%)",
                     }}
                 >
                     {[...secondHalf, ...secondHalf].map((item, index) => (
@@ -318,6 +317,31 @@ export default function Testimonials() {
                     zIndex: 10,
                 }}
             />
+
+            <style jsx>{`
+                @keyframes scrollLeft {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                @keyframes scrollRight {
+                    0% {
+                        transform: translateX(-50%);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                .scroll-track-left {
+                    animation: scrollLeft 40s linear infinite;
+                }
+                .scroll-track-right {
+                    animation: scrollRight 40s linear infinite;
+                }
+            `}</style>
         </section>
     );
 }

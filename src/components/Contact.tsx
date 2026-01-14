@@ -228,7 +228,7 @@ export default function Contact() {
                     }}
                 >
                     <div style={{ color: "var(--color-text-muted)", fontSize: "0.875rem" }}>
-                        © 2024 singlepick. All rights reserved.
+                        © 2026 singlepick. All rights reserved.
                     </div>
                     <div
                         style={{

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -72,15 +73,19 @@ export default function Header() {
                 <Link
                     href="#hero"
                     style={{
-                        fontSize: "1.5rem",
-                        fontWeight: 800,
-                        background: "linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
+                        display: "flex",
+                        alignItems: "center",
                         textDecoration: "none",
                     }}
                 >
-                    singlepick
+                    <Image
+                        src="/logo.png"
+                        alt="singlepick"
+                        width={150}
+                        height={40}
+                        style={{ objectFit: "contain" }}
+                        priority
+                    />
                 </Link>
 
                 <ul

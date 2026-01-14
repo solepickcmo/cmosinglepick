@@ -27,6 +27,7 @@ const plans = [
         cta: "신청하기",
         popular: false,
         accent: false,
+        limit: "매일 3자리 한정",
         requiresConsultation: true,
     },
     {
@@ -49,7 +50,7 @@ const plans = [
     {
         name: "VIP",
         price: "500만",
-        description: "종합 컨설팅 패키지",
+        description: "프리미엄 진행 후 문의 요청",
         features: [
             "전체 비즈니스 진단",
             "브랜딩 전략 수립",
@@ -61,7 +62,6 @@ const plans = [
         cta: "문의하기",
         popular: false,
         accent: false,
-        limit: "매일 3자리 한정",
         requiresConsultation: true,
     },
 ];
