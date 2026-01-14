@@ -143,7 +143,7 @@ export default function Pricing() {
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
                         gap: "1.5rem",
-                        alignItems: "start",
+                        alignItems: "stretch",
                     }}
                 >
                     {plans.map((plan) => (
@@ -154,13 +154,13 @@ export default function Pricing() {
                                 position: "relative",
                                 display: "flex",
                                 flexDirection: "column",
-                                padding: plan.popular ? "2.5rem 1.5rem" : "2rem 1.5rem",
+                                padding: "2rem 1.5rem",
+                                paddingTop: plan.popular ? "2.5rem" : "2rem",
                                 border: plan.popular ? "2px solid var(--color-primary)" : "1px solid var(--color-border)",
                                 background: plan.popular
                                     ? "linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 184, 0, 0.03))"
                                     : "var(--color-bg-secondary)",
                                 borderRadius: "20px",
-                                transform: plan.popular ? "scale(1.02)" : "scale(1)",
                                 zIndex: plan.popular ? 10 : 1,
                             }}
                         >
@@ -211,24 +211,34 @@ export default function Pricing() {
                                 <span style={{ color: "var(--color-text-secondary)", fontSize: "1rem", marginLeft: "2px" }}>원</span>
                             </div>
 
-                            {/* Limit Badge */}
-                            {plan.limit && (
-                                <div
-                                    style={{
-                                        background: "rgba(255, 184, 0, 0.15)",
-                                        border: "1px solid rgba(255, 184, 0, 0.4)",
-                                        borderRadius: "8px",
-                                        padding: "0.5rem 1rem",
-                                        marginBottom: "1.5rem",
-                                        fontSize: "0.8rem",
-                                        color: "var(--color-accent)",
-                                        textAlign: "center",
-                                        fontWeight: 600,
-                                    }}
-                                >
-                                    ⚡ {plan.limit}
-                                </div>
-                            )}
+                            {/* Limit Badge - Always show container for alignment */}
+                            <div
+                                style={{
+                                    height: "40px",
+                                    marginBottom: "1.5rem",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                {plan.limit && (
+                                    <div
+                                        style={{
+                                            background: "rgba(255, 184, 0, 0.15)",
+                                            border: "1px solid rgba(255, 184, 0, 0.4)",
+                                            borderRadius: "8px",
+                                            padding: "0.5rem 1rem",
+                                            fontSize: "0.8rem",
+                                            color: "var(--color-accent)",
+                                            textAlign: "center",
+                                            fontWeight: 600,
+                                            width: "100%",
+                                        }}
+                                    >
+                                        ⚡ {plan.limit}
+                                    </div>
+                                )}
+                            </div>
 
                             {/* Features */}
                             <ul
