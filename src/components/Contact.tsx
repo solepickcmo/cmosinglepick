@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -230,17 +231,13 @@ export default function Contact() {
                     <div style={{ color: "var(--color-text-muted)", fontSize: "0.875rem" }}>
                         © 2026 singlepick. All rights reserved.
                     </div>
-                    <div
-                        style={{
-                            fontSize: "1.25rem",
-                            fontWeight: 800,
-                            background: "linear-gradient(135deg, var(--color-primary), var(--color-accent))",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                        }}
-                    >
-                        singlepick
-                    </div>
+                    <Image
+                        src="/logo.png"
+                        alt="singlepick"
+                        width={120}
+                        height={32}
+                        style={{ objectFit: "contain" }}
+                    />
                 </div>
             </div>
 

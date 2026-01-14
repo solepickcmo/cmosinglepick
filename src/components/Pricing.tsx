@@ -143,7 +143,7 @@ export default function Pricing() {
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
                         gap: "1.5rem",
-                        alignItems: "stretch",
+                        alignItems: "start",
                     }}
                 >
                     {plans.map((plan) => (
@@ -203,12 +203,7 @@ export default function Pricing() {
                                     style={{
                                         fontSize: "2.5rem",
                                         fontWeight: 800,
-                                        background: plan.accent
-                                            ? "linear-gradient(135deg, var(--color-primary), var(--color-accent))"
-                                            : "none",
-                                        WebkitBackgroundClip: plan.accent ? "text" : "unset",
-                                        WebkitTextFillColor: plan.accent ? "transparent" : "unset",
-                                        color: plan.accent ? undefined : "var(--color-text)",
+                                        color: "#FFFFFF",
                                     }}
                                 >
                                     {plan.price}
