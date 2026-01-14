@@ -20,15 +20,15 @@ const socialLinks = [
     {
         name: "Instagram",
         icon: "📸",
-        url: "https://instagram.com/singlepick",
-        description: "@singlepick",
+        url: "https://www.instagram.com/singlepick_marketing/",
+        description: "@singlepick_marketing",
         color: "#E4405F",
     },
     {
         name: "Email",
         icon: "✉",
-        url: "mailto:contact@singlepick.space",
-        description: "contact@singlepick.space",
+        url: "mailto:singlepick.marketing@gmail.com",
+        description: "singlepick.marketing@gmail.com",
         color: "#00D4FF",
     },
 ];
