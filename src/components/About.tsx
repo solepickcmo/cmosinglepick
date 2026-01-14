@@ -255,6 +255,12 @@ export default function About() {
         @media (max-width: 900px) {
           div[style*="grid-template-columns: repeat(3"] {
             grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .bridge-line {
+            display: none !important;
           }
         }
       `}</style>

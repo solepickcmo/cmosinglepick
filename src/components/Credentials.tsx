@@ -238,11 +238,21 @@ export default function Credentials() {
         @media (max-width: 900px) {
           div[style*="grid-template-columns: repeat(4"] {
             grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
           }
         }
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
           div[style*="grid-template-columns: repeat(4"] {
-            grid-template-columns: 1fr !important;
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding-bottom: 1rem !important;
+            gap: 0.75rem !important;
+          }
+          div[style*="grid-template-columns: repeat(4"] > div {
+            flex: 0 0 140px !important;
+            scroll-snap-align: start !important;
           }
         }
       `}</style>

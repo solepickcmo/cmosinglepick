@@ -372,11 +372,13 @@ export default function Pricing() {
         @media (max-width: 1024px) {
           div[style*="grid-template-columns: repeat(4"] {
             grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
           }
         }
         @media (max-width: 640px) {
           div[style*="grid-template-columns: repeat(4"] {
             grid-template-columns: 1fr !important;
+            gap: 1rem !important;
           }
         }
       `}</style>

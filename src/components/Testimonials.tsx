@@ -187,8 +187,8 @@ export default function Testimonials() {
                         <div
                             key={`row1-${index}`}
                             style={{
-                                minWidth: "380px",
-                                maxWidth: "380px",
+                                minWidth: "300px",
+                                maxWidth: "300px",
                                 padding: "1.5rem",
                                 background: "var(--color-bg-secondary)",
                                 borderRadius: "16px",
@@ -247,8 +247,8 @@ export default function Testimonials() {
                         <div
                             key={`row2-${index}`}
                             style={{
-                                minWidth: "380px",
-                                maxWidth: "380px",
+                                minWidth: "300px",
+                                maxWidth: "300px",
                                 padding: "1.5rem",
                                 background: "var(--color-bg-secondary)",
                                 borderRadius: "16px",
