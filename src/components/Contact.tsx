@@ -216,7 +216,7 @@ export default function Contact() {
                 </div>
 
                 {/* Footer */}
-                <div
+                <footer
                     style={{
                         marginTop: "5rem",
                         paddingTop: "2rem",
@@ -238,7 +238,7 @@ export default function Contact() {
                         height={32}
                         style={{ objectFit: "contain" }}
                     />
-                </div>
+                </footer>
             </div>
 
             <style jsx>{`
