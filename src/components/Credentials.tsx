@@ -161,6 +161,7 @@ export default function Credentials() {
                 {/* Records Grid */}
                 <div
                     ref={cardsRef}
+                    className="records-grid"
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
@@ -236,23 +237,15 @@ export default function Credentials() {
 
             <style jsx>{`
         @media (max-width: 900px) {
-          div[style*="grid-template-columns: repeat(4"] {
+          .records-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 0.75rem !important;
           }
         }
         @media (max-width: 600px) {
-          div[style*="grid-template-columns: repeat(4"] {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            padding-bottom: 1rem !important;
+          .records-grid {
+            grid-template-columns: 1fr !important;
             gap: 0.75rem !important;
-          }
-          div[style*="grid-template-columns: repeat(4"] > div {
-            flex: 0 0 140px !important;
-            scroll-snap-align: start !important;
           }
         }
       `}</style>

@@ -214,6 +214,7 @@ export default function About() {
                 {/* Philosophy Cards */}
                 <div
                     ref={cardsRef}
+                    className="philosophy-grid"
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(3, 1fr)",
@@ -253,7 +254,7 @@ export default function About() {
 
             <style jsx>{`
         @media (max-width: 900px) {
-          div[style*="grid-template-columns: repeat(3"] {
+          .philosophy-grid {
             grid-template-columns: 1fr !important;
             gap: 1rem !important;
           }

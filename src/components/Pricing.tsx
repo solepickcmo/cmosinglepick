@@ -48,20 +48,20 @@ const plans = [
         requiresConsultation: true,
     },
     {
-        name: "VIP",
-        price: "500만",
-        description: "프리미엄 진행 후 문의 요청",
+        name: "1:1 비즈니스 빌드업",
+        price: "80만",
+        description: "퇴사/창업 준비를 위한 맞춤형 컨설팅",
         features: [
-            "전체 비즈니스 진단",
-            "브랜딩 전략 수립",
-            "마케팅 채널 설계",
-            "월 2회 화상 컨설팅",
-            "3개월 밀착 관리",
-            "우선 응대 보장",
+            "비즈니스 모델(BM) 수익 구조 설계",
+            "퇴사/창업 준비 맞춤형 실행 로드맵",
+            "1:1 심층 컨설팅 (90분, 화상/대면)",
+            "실행 지원 템플릿 5종 제공",
+            "1개월 밀착 피드백 및 질의응답",
         ],
-        cta: "문의하기",
+        cta: "신청하기",
         popular: false,
         accent: false,
+        limit: "매월 5명 한정",
         requiresConsultation: true,
     },
 ];
@@ -139,6 +139,7 @@ export default function Pricing() {
                 {/* Pricing Cards */}
                 <div
                     ref={cardsRef}
+                    className="pricing-grid"
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(4, 1fr)",
@@ -380,13 +381,13 @@ export default function Pricing() {
 
             <style jsx>{`
         @media (max-width: 1024px) {
-          div[style*="grid-template-columns: repeat(4"] {
+          .pricing-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 1rem !important;
           }
         }
         @media (max-width: 640px) {
-          div[style*="grid-template-columns: repeat(4"] {
+          .pricing-grid {
             grid-template-columns: 1fr !important;
             gap: 1rem !important;
           }

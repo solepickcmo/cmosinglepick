@@ -128,6 +128,7 @@ export default function Contact() {
                 {/* Social Links */}
                 <div
                     ref={linksRef}
+                    className="social-grid"
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(3, 1fr)",
@@ -243,7 +244,7 @@ export default function Contact() {
 
             <style jsx>{`
         @media (max-width: 768px) {
-          div[style*="grid-template-columns: repeat(3"] {
+          .social-grid {
             grid-template-columns: 1fr !important;
           }
         }
