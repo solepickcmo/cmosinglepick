@@ -107,7 +107,7 @@ export default function Hero() {
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "0.5rem",
-                        padding: "0.5rem 1rem",
+                        padding: "0.5rem 1.25rem",
                         background: "rgba(0, 212, 255, 0.1)",
                         borderRadius: "100px",
                         border: "1px solid rgba(0, 212, 255, 0.3)",
@@ -115,7 +115,7 @@ export default function Hero() {
                     }}
                 >
                     <span style={{ color: "var(--color-primary)", fontSize: "0.875rem", fontWeight: 500 }}>
-                        💼 연 매출 50억, 마케팅 총괄
+                        🧭 AI 시대, 비즈니스 디렉터
                     </span>
                 </div>
 
@@ -129,11 +129,14 @@ export default function Hero() {
                         fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
                     }}
                 >
-                    마케팅은 어려운 숙제가 아닙니다.
+                    AI 시대, 문제는 정보가 아니라{" "}
+                    <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>&apos;선택&apos;</span>입니다.
                     <br />
-                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>상품과 고객이 만나는</span>
+                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>
+                        수만 가지 길 중 당신이 압도적으로 성공할
+                    </span>
                     <br />
-                    <span style={{ color: "#FFFFFF", fontWeight: 700 }}>&apos;길&apos;</span>을 터주는 일입니다.
+                    <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>단 한 가지 길</span>을 찾아드립니다.
                 </h1>
 
                 {/* Subtitle */}
@@ -141,40 +144,66 @@ export default function Hero() {
                     ref={subtitleRef}
                     style={{
                         fontSize: "1.15rem",
-                        maxWidth: "680px",
-                        margin: "0 auto 3rem",
+                        maxWidth: "720px",
+                        margin: "0 auto 1.5rem",
                         lineHeight: 1.9,
+                        color: "var(--color-text-secondary)",
                     }}
                 >
-                    고객은 이미 당신을 찾고 있습니다.
+                    할 수 있는 것은 많아졌지만, 해야 할 일은 더 안 보입니다.
                     <br />
-                    다만 그들이 당신에게 도달할 <strong style={{ color: "var(--color-accent)" }}>방법(How)</strong>을 모를 뿐입니다.
-                    <br /><br />
-                    복잡한 기술을 배우기 전에,
-                    <br />
-                    <strong style={{ color: "var(--color-primary)" }}>고객의 발걸음이 머무는 길목</strong>을 먼저 설계하십시오.
+                    혼란을 걷어내고, 당신의 강점이 성과로 이어지는{" "}
+                    <strong style={{ color: "var(--color-primary)" }}>&apos;Single Pick&apos;</strong>에만 집중하세요.
                 </p>
 
-                {/* CTA Buttons */}
+                {/* Quote */}
+                <p
+                    style={{
+                        fontSize: "1rem",
+                        color: "var(--color-primary)",
+                        fontStyle: "italic",
+                        marginBottom: "3rem",
+                        opacity: 0.9,
+                    }}
+                >
+                    &quot;모두가 AI를 말할 때, 우리는 당신의 &apos;본질&apos;을 묻습니다.&quot;
+                </p>
+
+                {/* CTA Button - Single Large Primary */}
                 <div
                     style={{
                         display: "flex",
-                        gap: "1rem",
                         justifyContent: "center",
                         marginBottom: "4rem",
-                        flexWrap: "wrap",
                     }}
                 >
                     <a
                         href="https://forms.gle/4N7w4Jr8RLch1QrV7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-primary"
-                        style={{ textDecoration: "none" }}
+                        style={{
+                            display: "inline-block",
+                            background: "linear-gradient(135deg, #00D4FF, #0099CC)",
+                            color: "#000",
+                            fontSize: "1.25rem",
+                            fontWeight: 700,
+                            padding: "1.25rem 3.5rem",
+                            borderRadius: "12px",
+                            textDecoration: "none",
+                            boxShadow: "0 0 30px rgba(0, 212, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)",
+                            transition: "all 0.3s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = "translateY(-3px)";
+                            e.currentTarget.style.boxShadow = "0 0 50px rgba(0, 212, 255, 0.6), 0 12px 40px rgba(0, 0, 0, 0.4)";
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.boxShadow = "0 0 30px rgba(0, 212, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)";
+                        }}
                     >
-                        무료 질문 신청하기
+                        내게 맞는 &apos;단 하나&apos; 찾기
                     </a>
-                    <button className="btn-secondary">서비스 알아보기</button>
                 </div>
 
                 {/* Stats */}
@@ -188,9 +217,9 @@ export default function Hero() {
                     }}
                 >
                     {[
-                        { value: "50억+", label: "2년 누적 매출" },
-                        { value: "10년", label: "유통 경력" },
-                        { value: "500+", label: "컨설팅 케이스" },
+                        { value: "50억+", label: "누적 매출 기여액" },
+                        { value: "10년", label: "전략 경력" },
+                        { value: "500+", label: "컨설팅 사례" },
                     ].map((stat) => (
                         <div
                             key={stat.label}
@@ -204,7 +233,7 @@ export default function Hero() {
                                 style={{
                                     fontSize: "2.5rem",
                                     fontWeight: 800,
-                                    color: "#FFFFFF",
+                                    color: "var(--color-primary)",
                                     marginBottom: "0.5rem",
                                 }}
                             >
