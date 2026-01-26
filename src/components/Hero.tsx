@@ -169,14 +169,17 @@ export default function Hero() {
                     &quot;모두가 AI를 말할 때, 우리는 당신의 &apos;본질&apos;을 묻습니다.&quot;
                 </p>
 
-                {/* CTA Button - Single Large Primary */}
+                {/* CTA Buttons */}
                 <div
                     style={{
                         display: "flex",
                         justifyContent: "center",
+                        gap: "1.5rem",
                         marginBottom: "4rem",
+                        flexWrap: "wrap",
                     }}
                 >
+                    {/* Primary Button */}
                     <a
                         href="https://forms.gle/4N7w4Jr8RLch1QrV7"
                         target="_blank"
@@ -185,9 +188,9 @@ export default function Hero() {
                             display: "inline-block",
                             background: "linear-gradient(135deg, #00D4FF, #0099CC)",
                             color: "#000",
-                            fontSize: "1.25rem",
+                            fontSize: "1.125rem",
                             fontWeight: 700,
-                            padding: "1.25rem 3.5rem",
+                            padding: "1.125rem 2.5rem",
                             borderRadius: "12px",
                             textDecoration: "none",
                             boxShadow: "0 0 30px rgba(0, 212, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)",
@@ -202,7 +205,36 @@ export default function Hero() {
                             e.currentTarget.style.boxShadow = "0 0 30px rgba(0, 212, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)";
                         }}
                     >
-                        내게 맞는 &apos;단 하나&apos; 찾기
+                        무료 방향성 진단하기
+                    </a>
+
+                    {/* Secondary Button */}
+                    <a
+                        href="#cases"
+                        style={{
+                            display: "inline-block",
+                            background: "rgba(255, 255, 255, 0.05)",
+                            color: "#fff",
+                            fontSize: "1.125rem",
+                            fontWeight: 600,
+                            padding: "1.125rem 2.5rem",
+                            borderRadius: "12px",
+                            textDecoration: "none",
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
+                            transition: "all 0.3s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = "translateY(-3px)";
+                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+                            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                        }}
+                    >
+                        성공 케이스 보기
                     </a>
                 </div>
 
@@ -212,14 +244,16 @@ export default function Hero() {
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        gap: "3rem",
+                        gap: "2rem",
                         flexWrap: "wrap",
+                        maxWidth: "1000px",
+                        margin: "0 auto",
                     }}
                 >
                     {[
                         { value: "50억+", label: "누적 매출 기여액" },
-                        { value: "10년", label: "전략 경력" },
-                        { value: "500+", label: "컨설팅 사례" },
+                        { value: "10년", label: "비즈니스 본질을 꿰뚫는 전략 경력" },
+                        { value: "500+", label: "복잡한 고민을 성공으로 바꾼 컨설팅 사례" },
                     ].map((stat) => (
                         <div
                             key={stat.label}
@@ -227,6 +261,7 @@ export default function Hero() {
                             style={{
                                 textAlign: "center",
                                 padding: "1.5rem",
+                                flex: "1 1 250px",
                             }}
                         >
                             <div
@@ -234,12 +269,17 @@ export default function Hero() {
                                     fontSize: "2.5rem",
                                     fontWeight: 800,
                                     color: "var(--color-primary)",
-                                    marginBottom: "0.5rem",
+                                    marginBottom: "0.75rem",
                                 }}
                             >
                                 {stat.value}
                             </div>
-                            <div style={{ color: "var(--color-text-secondary)", fontSize: "0.875rem" }}>
+                            <div style={{
+                                color: "var(--color-text-secondary)",
+                                fontSize: "0.95rem",
+                                lineHeight: "1.5",
+                                wordBreak: "keep-all"
+                            }}>
                                 {stat.label}
                             </div>
                         </div>
