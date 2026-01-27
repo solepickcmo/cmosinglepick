@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import IdeaRoulette from "./IdeaRoulette";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,7 @@ export default function Hero() {
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLParagraphElement>(null);
     const statsRef = useRef<HTMLDivElement>(null);
+    const [isRouletteOpen, setIsRouletteOpen] = useState(false);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -130,10 +132,12 @@ export default function Hero() {
                     }}
                 >
                     AI 시대, 문제는 정보가 아니라{" "}
+                    <br />
+
                     <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>&apos;선택&apos;</span>입니다.
                     <br />
                     <span style={{ color: "#FFFFFF", fontWeight: 700 }}>
-                        수만 가지 길 중 당신이 압도적으로 성공할
+                        당신이 압도적으로 성공할
                     </span>
                     <br />
                     <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>단 한 가지 길</span>을 찾아드립니다.
@@ -209,8 +213,8 @@ export default function Hero() {
                     </a>
 
                     {/* Secondary Button */}
-                    <a
-                        href="#cases"
+                    <button
+                        onClick={() => setIsRouletteOpen(true)}
                         style={{
                             display: "inline-block",
                             background: "rgba(255, 255, 255, 0.05)",
@@ -219,9 +223,9 @@ export default function Hero() {
                             fontWeight: 600,
                             padding: "1.125rem 2.5rem",
                             borderRadius: "12px",
-                            textDecoration: "none",
                             border: "1px solid rgba(255, 255, 255, 0.2)",
                             transition: "all 0.3s ease",
+                            cursor: "pointer",
                         }}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.transform = "translateY(-3px)";
@@ -234,8 +238,8 @@ export default function Hero() {
                             e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
                         }}
                     >
-                        성공 케이스 보기
-                    </a>
+                        아이디어 룰렛 🎲
+                    </button>
                 </div>
 
                 {/* Stats */}
@@ -310,6 +314,7 @@ export default function Hero() {
                     }}
                 />
             </div>
+            <IdeaRoulette isOpen={isRouletteOpen} onClose={() => setIsRouletteOpen(false)} />
         </section>
     );
 }
